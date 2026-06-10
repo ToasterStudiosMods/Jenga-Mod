@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "jengamod",
+  "version": "${version}",
+  "name": "Jenga Mod",
+  "description": "Physics Jenga using Sable. Use /stack <1-999> to spawn a Jenga tower.",
+  "authors": [
+    "ToasterStudios"
+  ],
+  "contact": {
+    "homepage": "https://github.com/ToasterStudiosMods/Jenga-Mod",
+    "sources": "https://github.com/ToasterStudiosMods/Jenga-Mod"
+  },
+  "license": "https://github.com/ToasterStudiosMods/Jenga-Mod/blob/main/LICENSE.md",
+  "icon": "assets/jengamod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ToasterStudios.jenga.JengaMod"
+    ],
+    "client": [
+      "com.ToasterStudios.jenga.client.JengaModClient"
+    ]
+  },
+  "mixins": [
+    "jengamod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "sable": "*"
+  }
+}

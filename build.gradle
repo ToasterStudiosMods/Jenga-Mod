@@ -1,0 +1,91 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group   = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    maven {
+        name = "RyanHCode (Sable)"
+        url  = "https://maven.ryanhcode.dev/releases"
+        content {
+            includeGroup "dev.ryanhcode.sable"
+            includeGroup "dev.ryanhcode.sable-companion"
+        }
+    }
+    maven {
+        // Hosts Veil and its transitive deps: gg.moonflower:molang-compiler
+        // and io.github.ocelot:glsl-processor. All three are needed by Sable.
+        name = "BlameJared (Veil + Moonflower + Ocelot)"
+        url  = "https://maven.blamejared.com/"
+        content {
+            includeGroup "foundry.veil"
+            includeGroup "gg.moonflower"
+            includeGroup "io.github.ocelot"
+        }
+    }
+    maven {
+        // Fuzs publishes Forge Config API Port (and other mods) to a
+        // GitHub-hosted maven inside the Fuzss/modresources repo.
+        name = "Fuzs (Forge Config API Port)"
+        url  = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        content {
+            includeGroup "fuzs.forgeconfigapiport"
+        }
+    }
+    maven {
+        name = "Fabric"
+        url  = "https://maven.fabricmc.net/"
+    }
+    mavenCentral()
+}
+
+loom {
+    // Sable's API references both client and server MC classes; splitting source
+    // sets can cause compilation to fail on shared utility classes.
+    // Keeping source sets unified avoids that. All Sable calls in this mod are server-side.
+}
+
+dependencies {
+    // Minecraft + mappings
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings  "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+
+    // Fabric Loader + API
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // Sable — physics sub-levels for Fabric 1.21.1
+    modApi "dev.ryanhcode.sable:sable-fabric-${project.minecraft_version}:${project.sable_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from("LICENSE.md") {
+        rename { "${it}_${project.archives_base_name}" }
+    }
+}

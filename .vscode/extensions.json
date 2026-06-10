@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        // Java language support + IntelliSense
+        "vscjava.vscode-java-pack",
+        // Gradle task runner + dependency view
+        "vscjava.vscode-gradle"
+    ]
+}

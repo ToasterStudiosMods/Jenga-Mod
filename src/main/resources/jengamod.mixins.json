@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.ToasterStudios.jenga.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ScrollMixin"
+  ],
+  "client": [
+    "client.OptionsScreenMixin",
+    "client.MouseRightHoldMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

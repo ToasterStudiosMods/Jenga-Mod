@@ -1,0 +1,47 @@
+{
+  "key.jengamod.distance_modifier": "Drag Distance Modifier (hold + scroll)",
+  "category.jengamod.general": "Jenga Mod",
+
+  "options.jengamod.jenga": "Jenga Config",
+  "options.jengamod.jenga_blocks": "Jenga Blocks",
+
+  "screen.jengamod.settings.title": "Jenga Settings",
+  "screen.jengamod.settings.turn_enforcement.label": "Turn Enforcement: %s",
+  "screen.jengamod.settings.turn_enforcement.on": "ON",
+  "screen.jengamod.settings.turn_enforcement.off": "OFF",
+  "screen.jengamod.settings.lazy_drag.label": "Lazy Drag: %s",
+  "screen.jengamod.settings.lazy_drag.on": "ON",
+  "screen.jengamod.settings.lazy_drag.off": "OFF",
+  "screen.jengamod.settings.top_layers.label": "Top 3 Layers Protected: %s",
+  "screen.jengamod.settings.top_layers.on": "ON",
+  "screen.jengamod.settings.top_layers.off": "OFF",
+  "screen.jengamod.settings.fall_detection.label": "Fall Detection: %s",
+  "screen.jengamod.settings.fall_detection.on": "ON",
+  "screen.jengamod.settings.fall_detection.off": "OFF",
+  "screen.jengamod.settings.fall_sensitivity.label": "Fall Sensitivity: %s blocks",
+  "screen.jengamod.settings.placement_sensitivity.label": "Placement Sensitivity: %s° tolerance",
+  "screen.jengamod.settings.ignore_wobbling.label": "Ignore Wobbling: %s",
+  "screen.jengamod.settings.ignore_wobbling.on": "ON",
+  "screen.jengamod.settings.ignore_wobbling.off": "OFF",
+  "screen.jengamod.settings.wobble_time.label": "Wobble Time: %s s",
+
+  "screen.jengamod.blocks.title": "Jenga Blocks",
+  "screen.jengamod.blocks.modded_warning": "Modded blocks will not work.",
+  "screen.jengamod.blocks.multiplayer_warning": "Note: this only affects singleplayer / LAN host. Dedicated servers use their own config file.",
+  "screen.jengamod.blocks.placeholder": "e.g. stripped_oak_log",
+  "screen.jengamod.blocks.add": "Add",
+  "screen.jengamod.blocks.done": "Done",
+  "screen.jengamod.blocks.reset": "Reset to Default",
+  "screen.jengamod.blocks.reset_done": "Restored vanilla stripped logs.",
+
+  "screen.jengamod.blocks.added": "Added %s",
+  "screen.jengamod.blocks.removed": "Removed %s",
+  "screen.jengamod.blocks.click_to_remove": "Click an entry to remove it.",
+
+  "screen.jengamod.blocks.error_empty": "Type a block ID first.",
+  "screen.jengamod.blocks.error_invalid_id": "Not a valid identifier.",
+  "screen.jengamod.blocks.error_not_a_block": "Not a registered block. (Items don't count.)",
+  "screen.jengamod.blocks.error_not_full_block": "Not a full block. (No doors, slabs, stairs, fences, walls, etc.)",
+  "screen.jengamod.blocks.error_already_added": "Already in the list.",
+  "screen.jengamod.blocks.error_add_failed": "Couldn't add — see latest.log."
+}
